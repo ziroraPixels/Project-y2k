@@ -18,7 +18,7 @@ Voor die 80's and 90's babies, om even terug te duiken in de tijd. Maar ook voor
 Dit project is een ode aan die creative, chaotische maar toch kleurrijke periode van het web. Het is een poging om de fundamenten van een social media platform vanaf de grond op te bouwen, met de technologie van nu en de esthetiek van toen.
 
 ### Technologieën
-* **FRontend:** HTML5, CSS3, Javascript
+* **Frontend:** HTML5, CSS3, Javascript
 * **Backend:** Python (met Flask)
 * **Database:** SQL
 
