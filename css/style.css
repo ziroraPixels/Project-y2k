@@ -1,0 +1,6 @@
+body {
+    background-color: #000033; /* Een donker, diepblauw */
+    color: #00FF00; /* Een klassiek, groen "hacker"-lettertype */
+    font-family: 'Courier New', Courier, monospace; /* Een typisch computer-lettertype */
+    text-align: center; /* Zet alles in het midden */
+}
