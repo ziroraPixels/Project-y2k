@@ -1,13 +1,57 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UFT-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Y2K</title>
-<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Y2K - Welkom!</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>Portfolio Project Y2K</h1>
-<p>Welkom bij mijn portfolio project. Deze site is momenteel in aanbouw.</p>
+    <div class="main-container">
+        <header>
+            <h1 class="glitter-text">Project Y2K</h1>
+            <p class="subtitle">"Bringing the year 2000 back, one pixel at a time"</p>
+        </header>
+
+        <div class="login-box">
+            <div class="box-header">
+                <span>Log in op je profiel</span>
+            </div>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="username">Gebruikersnaam:</label>
+                    <input type="text" id="username" name="username" autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <label for="password">Wachtwoord:</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <div class="button-group">
+                    <button type="button" class="y2k-button">[ Log In ]</button>
+                </div>
+                <p class="signup-link">Nog geen profiel? <a href="#">Maak er hier een aan!</a></p>
+            </form>
+        </div>
+
+        <div class="decorations">
+            <div class="doll doll-left">
+                <img src="assets/images/angel_doll.gif" alt="Pixel Angel Doll" class="pixel-doll">
+            </div>
+            <div class="doll doll-right">
+                <img src="assets/images/devil_doll.gif" alt="Pixel Devil Doll" class="pixel-doll">
+            </div>
+        </div>
+
+        <footer>
+            <div class="hit-counter">
+                Bezoekers: <span class="counter-digits">000404</span>
+            </div>
+            <div class="under-construction">
+                <img src="assets/images/under_construction.gif" alt="Under Construction GIF">
+                <p>Deze site is momenteel in aanbouw!</p>
+            </div>
+            <p class="copyright">&copy; 2026 - ZiroraPixels Productions</p>
+        </footer>
+    </div>
 </body>
 </html>
