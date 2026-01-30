@@ -1,6 +1,85 @@
+/* --- Y2K Esthetiek --- */
+
 body {
-    background-color: #000033; /* Een donker, diepblauw */
-    color: #00FF00; /* Een klassiek, groen "hacker"-lettertype */
-    font-family: 'Courier New', Courier, monospace; /* Een typisch computer-lettertype */
-    text-align: center; /* Zet alles in het midden */
+    background-color: #000033;
+    background-image: radial-gradient(circle, #000066 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: #00FF00; /* VERANDER DIT NAAR #FF69B4 VOOR HOT PINK */
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.main-container {
+    width: 90%;
+    max-width: 800px;
+    background-color: rgba(0, 0, 51, 0.9);
+    border: 3px double #00FF00; /* VERANDER DIT OOK */
+    padding: 20px;
+    box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    position: relative;
+}
+
+.glitter-text {
+    font-size: 3rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #FF69B4; /* EN DEZE */
+    text-shadow: 2px 2px #FF00FF, 0 0 10px #FF69B4;
+    animation: glitter 1.5s infinite;
+}
+
+@keyframes glitter {
+    0% { opacity: 1; text-shadow: 2px 2px #FF00FF, 0 0 10px #FF69B4; }
+    50% { opacity: 0.8; text-shadow: 2px 2px #FF00FF, 0 0 20px #dbdbdb, 0 0 30px #FF69B4; }
+    100% { opacity: 1; text-shadow: 2px 2px #FF00FF, 0 0 10px #FF69B4; }
+}
+
+.login-box {
+    width: 300px;
+    margin: 0 auto 40px;
+    border: 2px solid #FF69B4;
+    background-color: #000044;
+}
+
+.box-header {
+    background-color: #00FF00;
+    color: #000033;
+    padding: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.input-group input {
+    width: 100%;
+    background-color: #000;
+    border: 1px solid #00FF00;
+    color: #00FF00;
+    padding: 5px;
+}
+
+.pixel-doll {
+    width: 80px;
+    height: auto;
+    filter: drop-shadow(0 0 5px #FF00FF);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ... de rest van de footer styling ... */
