@@ -50,13 +50,13 @@ body::-webkit-scrollbar {
 .login-box {
     width: 300px;
     margin: 0 auto 40px;
-    border: 2px solid #FF69B4;
+    border: 2px solid #00ff00;
     background-color: #310044;
 }
 
 .box-header {
     background-color: #00FF00;
-    color: #310044;
+    color: #00FF00;
     padding: 5px;
     font-weight: bold;
     text-transform: uppercase;
@@ -65,8 +65,8 @@ body::-webkit-scrollbar {
 .input-group input {
     width: 80%;
     background-color: #000;
-    border: 1px solid #00FF00;
-    color: #00FF00;
+    border: 1px solid #FF00FF;
+    color: #FF00FF;
     padding: 5px;
 }
 
