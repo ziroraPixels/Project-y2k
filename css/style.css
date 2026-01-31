@@ -1,5 +1,3 @@
-/* --- Y2K Esthetiek --- */
-
 body {
     background-color: #310044;
     background-image: radial-gradient(circle, #000066 1px, transparent 1px);
@@ -80,4 +78,30 @@ body::-webkit-scrollbar {
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
+}
+/* Dolls links/rechts naast de container */
+.decorations {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.doll {
+    position: absolute;
+    top: 120px;     
+    width: 80px;   
+}
+
+.doll-left { left: 16px; }
+.doll-right { right: 16px; }
+
+
+.doll-right .pixel-doll {
+    animation: float2 3.6s ease-in-out infinite;
+}
+
+@keyframes float2 {
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50% { transform: translateY(-12px) rotate(1deg); }
 }
