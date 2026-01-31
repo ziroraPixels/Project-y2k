@@ -63,7 +63,7 @@ body::-webkit-scrollbar {
 }
 
 .input-group input {
-    width: 100%;
+    width: 80%;
     background-color: #000;
     border: 1px solid #00FF00;
     color: #00FF00;
