@@ -23,7 +23,7 @@ body::-webkit-scrollbar {
 .main-container {
     width: 90%;
     max-width: 800px;
-    background-color: rgba(0, 0, 51, 0.9);
+    background-color: rgb(71, 1, 101);
     border: 3px double #00FF00; /* VERANDER DIT OOK */
     padding: 20px;
     box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.5);
@@ -51,12 +51,12 @@ body::-webkit-scrollbar {
     width: 300px;
     margin: 0 auto 40px;
     border: 2px solid #FF69B4;
-    background-color: #000044;
+    background-color: #310044;
 }
 
 .box-header {
     background-color: #00FF00;
-    color: #000033;
+    color: #310044;
     padding: 5px;
     font-weight: bold;
     text-transform: uppercase;
