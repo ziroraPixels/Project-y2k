@@ -100,6 +100,47 @@ body::-webkit-scrollbar {
 .doll-right .pixel-doll {
     animation: float2 3.6s ease-in-out infinite;
 }
+/* --- Extra Corner Decorations met Margin & Padding --- */
+
+.doll-top-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    
+    /* Pas deze waardes aan voor de afstand tot de rand van het scherm */
+    margin-top: 30px;    /* Afstand van boven */
+    margin-left: 40px;   /* Afstand van links */
+    
+    /* Pas deze waardes aan voor ruimte rondom het plaatje zelf */
+    padding: 30px;       
+    
+    /* Optioneel: een randje om te zien waar je padding zit */
+    /* border: 1px dashed #FF69B4; */
+}
+
+.doll-bottom-left {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    
+    /* Pas deze waardes aan voor de afstand tot de rand van het scherm */
+    margin-bottom: 30px; /* Afstand van onderen */
+    margin-left: 40px;   /* Afstand van links */
+    
+    /* Pas deze waardes aan voor ruimte rondom het plaatje zelf */
+    padding: 30px;
+}
+
+/* De plaatjes zelf */
+.doll-top-left .pixel-doll, 
+.doll-bottom-left .pixel-doll {
+    width: 60px;
+    height: auto;
+    display: block; /* Zorgt dat padding overal gelijk werkt */
+}
+
 
 @keyframes float2 {
     0%, 100% { transform: translateY(0) rotate(-1deg); }
