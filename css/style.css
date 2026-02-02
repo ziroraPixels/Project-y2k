@@ -74,73 +74,43 @@ body::-webkit-scrollbar {
     filter: drop-shadow(0 0 5px #FF00FF);
     animation: float 3s ease-in-out infinite;
 }
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-/* Dolls links/rechts naast de container */
-.decorations {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 5;
-}
-
-.doll {
-    position: absolute;
-    top: 120px;     
-    width: 80px;   
-}
-
-.doll-left { left: 16px; }
-.doll-right { right: 16px; }
-
-
-.doll-right .pixel-doll {
-    animation: float2 3.6s ease-in-out infinite;
-}
-/* --- Extra Corner Decorations met Margin & Padding --- */
+/* --- Extra Corner Decorations: Top Left & Bottom Right --- */
 
 .doll-top-left {
     position: fixed;
     top: 0;
     left: 0;
     z-index: 10;
-    
-    /* Pas deze waardes aan voor de afstand tot de rand van het scherm */
-    margin-top: 30px;    /* Afstand van boven */
-    margin-left: 40px;   /* Afstand van links */
-    
-    /* Pas deze waardes aan voor ruimte rondom het plaatje zelf */
-    padding: 30px;       
-    
-    /* Optioneel: een randje om te zien waar je padding zit */
-    /* border: 1px dashed #FF69B4; */
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px;
 }
 
-.doll-bottom-left {
+.doll-bottom-right {
     position: fixed;
     bottom: 0;
-    left: 0;
+    right: 0; /* Veranderd van left naar right! */
     z-index: 10;
     
-    /* Pas deze waardes aan voor de afstand tot de rand van het scherm */
-    margin-bottom: 30px; /* Afstand van onderen */
-    margin-left: 40px;   /* Afstand van links */
+    /* Afstand tot de rechter- en onderkant */
+    margin-bottom: 20px;
+    margin-right: 20px; /* Veranderd van margin-left naar margin-right */
     
-    /* Pas deze waardes aan voor ruimte rondom het plaatje zelf */
-    padding: 30px;
+    padding: 10px;
 }
 
 /* De plaatjes zelf */
 .doll-top-left .pixel-doll, 
-.doll-bottom-left .pixel-doll {
+.doll-bottom-right .pixel-doll {
     width: 60px;
     height: auto;
-    display: block; /* Zorgt dat padding overal gelijk werkt */
+    display: block;
 }
 
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
 
 @keyframes float2 {
     0%, 100% { transform: translateY(0) rotate(-1deg); }
