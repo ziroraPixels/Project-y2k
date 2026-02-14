@@ -1,26 +1,40 @@
-# Project-y2k
-My portfolio project
-# Project-y2k
-##"We're gonna bring the year 2000 back"
+# 📟 Project Y2K
+> **"Bringing the year 2000 back, one pixel at a time."**
 
-Dit is mijn portfolio project: een moderne webapplicatie, gebouwd met Python en java script, maar met de onvergetelijke sfeer van het internet in de vroege jaren 2000.
+Welkom bij **Project Y2K**: mijn persoonlijke portfolio project. Dit is een moderne webapplicatie met de onvergetelijke esthetiek van het internet uit de vroege jaren 2000. 
 
-### De Visie
-Denkterug aan de tijd van dail-up modems, MSN Messenger en je eerste zelf gemaakte profielpagina. De tijd van:
-* **Glitter Banners** flitsende banners die smeekt eom aangeklikt te worden.
-* **Dollz** je weet wel van die girly pixel poppetjes die je uren lang kon aankleden.
-* **Gastenboeken** of te wel de Krabbels. Waar je berichten achterliet voor je vrienden.
-* **Under Construction** die flashy gif.
-* **BACK to the Basics** een volledige html code knippen en plakken om je perfecte profiel pagina te realiseren zoals we dat vroeger deden.
+### 💿 De Visie
+Denk terug aan de tijd van dial-up modems, MSN Messenger en je eerste zelfgemaakte profielpagina. Dit project is een ode aan die creatieve, chaotische en kleurrijke periode van het web. Het is een platform gebouwd met de technologie van nu, maar met de ziel van toen.
 
-Voor die 80's and 90's babies, om even terug te duiken in de tijd. Maar ook voor de nieuwkommers om te leren hoe coderen werkt.
+**Voor wie is dit?**
+* **80's & 90's babies:** Om even heerlijk nostalgisch terug in de tijd te duiken.
+* **Nieuwkomers:** Om op een leuke, visuele manier te leren hoe de fundamenten van het web (HTML/CSS) werken.
 
-Dit project is een ode aan die creative, chaotische maar toch kleurrijke periode van het web. Het is een poging om de fundamenten van een social media platform vanaf de grond op te bouwen, met de technologie van nu en de esthetiek van toen.
+---
 
-### Technologieën
-* **Frontend:** HTML5, CSS3, Javascript
-* **Backend:** Python (met Flask)
-* **Database:** SQL
+### 💅 De "Core" Features
+* ✨ **Glitter Banners:** Flitsende visuals die schreeuwen om aandacht.
+* 🧸 **Dollz:** Die iconische pixel-poppetjes die een hele generatie aan het stylen kregen.
+* 📝 **Gastenboeken:** De voorloper van de 'wall' of 'krabbels'.
+* 🚧 **Under Construction:** Omdat een goed project nooit écht af is (uiteraard met flitsende GIFs).
+* ⌨️ **Back to Basics:** Een ingebouwde editor om zelf met HTML-code te spelen, net als vroeger op je profielpagina.
 
-**Status:** Momenteel in aanbouw...
-(uiteraard met knipperde gif in gedachten).
+---
+
+### 🛠️ Technologieën
+Ik heb dit project vanaf de grond opgebouwd om te laten zien hoe frontend en backend met elkaar communiceren:
+
+| Onderdeel | Technologie |
+| :--- | :--- |
+| **Frontend** | HTML5, CSS3 (Custom Styles), JavaScript |
+| **Backend** | Python (Flask Framework) |
+| **Database** | SQL / SQLAlchemy |
+| **Vibe** | Pure Nostalgie |
+
+---
+
+### 🚀 Status
+**Momenteel in aanbouw...** *(Hoor je dat dial-up geluid al op de achtergrond?)*
+
+---
+© 2026 - ZiroraPixels Productions
