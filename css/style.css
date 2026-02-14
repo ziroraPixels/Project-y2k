@@ -1,3 +1,4 @@
+/* --- Basis Instellingen --- */
 body {
     background-color: #310044;
     background-image: radial-gradient(circle, #000066 1px, transparent 1px);
@@ -29,7 +30,7 @@ body::-webkit-scrollbar {
     position: relative;
 }
 
-/* --- Header & Text Effects --- */
+/* --- Header & Tekst Effecten --- */
 .glitter-text {
     font-size: 3rem;
     margin: 0;
@@ -46,36 +47,50 @@ body::-webkit-scrollbar {
     100% { opacity: 1; text-shadow: 2px 2px #FF00FF, 0 0 10px #FF69B4; }
 }
 
-/* Nieuwe Flexbox styling voor de vlinders en tekst */
 .mini.butterfly {
-    display: flex;           /* Zet ze naast elkaar */
-    justify-content: center; /* In het midden van de container */
-    align-items: center;     /* Verticaal uitgelijnd */
-    gap: 15px;               /* Ruimte tussen vlinder en tekst */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
     margin: 20px 0;
 }
 
 .subtitle {
     font-size: 1rem;
     color: #00FF00;
-    margin: 0;
+    margin: 10px 0;
 }
 
-/* --- Login Box Area --- */
+/* --- Login & Registratie Box --- */
 .login-box {
-    width: 300px;
-    /* margin: boven auto onder(vervangt de <br>) */
-    margin: 0 auto 60px; 
+    width: 320px;
+    margin: 0 auto 40px; 
     border: 2px solid #00ff00;
     background-color: #310044;
+    padding-bottom: 20px;
 }
 
 .box-header {
     background-color: #00FF00;
     color: #FF69B4;
-    padding: 5px;
+    padding: 8px;
     font-weight: bold;
     text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+/* --- Formulier Elementen --- */
+.input-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group label {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    color: #00FF00;
 }
 
 .input-group input {
@@ -83,22 +98,25 @@ body::-webkit-scrollbar {
     background-color: #000;
     border: 1px solid #00FF00;
     color: #FF69B4;
-    padding: 5px;
+    padding: 8px;
+    text-align: center;
 }
 
-/* --- De Retro Windows 95 Button (Consistentie!) --- */
+.input-group input:focus {
+    outline: 2px solid #FF00FF;
+}
+
+/* --- De Windows 95 Knop --- */
 .y2k-button {
     background-color: #c0c0c0; 
     color: #000000;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     font-size: 14px;
-    padding: 5px 15px;
+    padding: 8px 20px;
     text-transform: uppercase;
     cursor: pointer;
     margin-top: 10px;
-    
-    /* 3D Bevel effect */
     border-top: 2px solid #ffffff;
     border-left: 2px solid #ffffff;
     border-right: 2px solid #404040;
@@ -107,15 +125,32 @@ body::-webkit-scrollbar {
 }
 
 .y2k-button:hover {
-    /* Klein detail: tekst kleur verandering bij hover mag best */
     color: #FF00FF; 
 }
 
 .y2k-button:active {
-    /* Het 'indrukken' effect */
     border-top: 2px solid #404040;
     border-left: 2px solid #404040;
     border-right: 2px solid #ffffff;
     border-bottom: 2px solid #ffffff;
     transform: translate(1px, 1px);
+}
+
+/* --- Footer & Links --- */
+footer {
+    margin-top: 20px;
+}
+
+a {
+    color: #00FF00;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #FF00FF;
+}
+
+.copyright {
+    font-size: 0.7rem;
+    color: #888;
 }
