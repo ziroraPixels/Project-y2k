@@ -7,56 +7,37 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
     <div class="main-container">
-        <header>
-            <h1 class="glitter-text">Welkom terug!</h1>
-            <p class="subtitle">Ingelogd als: <span id="user-name" style="color: #FF00FF; font-weight: bold;">...</span></p>
-        </header>
+        <h1 class="glitter-text">DASHBOARD</h1>
+        
+        <div class="mini butterfly">
+            <span>🦋</span>
+            <span class="subtitle">Welkom terug in de toekomst van gisteren!</span>
+            <span>🦋</span>
+        </div>
 
-        <div class="login-box" style="max-width: 450px; margin: 0 auto 40px;">
-            <div class="box-header">Jouw Controlepaneel</div>
-            <div style="padding: 20px;">
-                <p>Wat wil je vandaag doen?</p>
-                
-                <div style="display: flex; flex-direction: column; gap: 15px;">
-                    <button class="y2k-button" onclick="window.location.href='editor.html'">
-                        [ ✏️ Profiel Bewerken ]
-                    </button>
-                    
-                    <button class="y2k-button" onclick="alert('Deze functie komt nog: Hier kun je je live profiel zien!')">
-                        [ 👀 Mijn Profiel Bekijken ]
-                    </button>
+        <div class="login-box" style="width: 100%; max-width: 600px;">
+            <div class="box-header">GEBRUIKERSPROFIEL</div>
+            <p class="subtitle" style="margin-top: 15px;">Status: <span style="color: #fff;">Online</span></p>
+            <p class="subtitle">Huidig Project: <span style="color: #fff;">Project Y2K Cyber-Vibe</span></p>
+        </div>
 
-                    <button class="y2k-button" style="border-color: #ff0000; color: #ff0000;" onclick="logout()">
-                        [ 🚪 Uitloggen ]
-                    </button>
-                </div>
-            </div>
+        <div class="dashboard-menu" style="margin-top: 30px; display: flex; flex-direction: column; gap: 15px; align-items: center;">
+            
+            <button class="y2k-button" onclick="location.href='editor.html'">[ OPEN CODE EDITOR ]</button>
+            
+            <button class="y2k-button" onclick="location.href='edit_profile.html'">[ BEWERK PROFIEL ]</button>
+            
+            <button class="y2k-button" onclick="location.href='about.html'">[ OVER PROJECT Y2K ]</button>
+
         </div>
 
         <footer>
-            <div class="under-construction">
-                <img src="https://blob.gifcities.org/gifcities/X5DTRW5U6AEXRUH3IT54NFLATWVRHNCD.gif" alt="Under Construction">
-            </div>
-            <p class="copyright">&copy; 2026 - ZiroraPixels Productions</p>
+            <p><a href="index.html">Uitloggen</a></p>
+            <p class="copyright">© 2026 - ZiroraPixels Productions</p>
         </footer>
     </div>
 
-    <script>
-        // Pak de naam uit de 'browser kluis'
-        const username = localStorage.getItem('currentUser');
-        
-        if (username) {
-            document.getElementById('user-name').innerText = username;
-        } else {
-            // Als er geen naam is, stuur ze terug naar de login
-            window.location.href = 'index.html';
-        }
-
-        function logout() {
-            localStorage.removeItem('currentUser');
-            window.location.href = 'index.html';
-        }
-    </script>
 </body>
 </html>
