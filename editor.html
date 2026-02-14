@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Y2K - Edit Mode</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/editor.css"> 
+</head>
+<body>
+
+    <nav class="top-bar">
+        <span>Ingelogd als: <b id="user-display">Gast</b></span>
+        <div class="nav-links">
+            <a href="dashboard.html">[ Dashboard ]</a>
+            <a href="index.html" onclick="logout()">[ Uitloggen ]</a>
+        </div>
+    </nav>
+
+    <div class="main-editor-container">
+        
+        <aside class="sidebar-help">
+            <h3>HTML Hulp</h3>
+            <div class="help-item">
+                <code>&lt;b&gt;Tekst&lt;/b&gt;</code>
+                <p>Maakt tekst <b>dikgedrukt</b>.</p>
+            </div>
+            <div class="help-item">
+                <code>&lt;i&gt;Tekst&lt;/i&gt;</code>
+                <p>Maakt tekst <i>schuin</i>.</p>
+            </div>
+            <div class="help-item">
+                <code>&lt;u&gt;Tekst&lt;/u&gt;</code>
+                <p>Maakt tekst <u>onderstreept</u>.</p>
+            </div>
+            <div class="help-item">
+                <code>&lt;br&gt;</code>
+                <p>Gaat naar de volgende regel (Enter).</p>
+            </div>
+            <div class="help-item">
+                <code>&lt;img src="plaatje.gif"&gt;</code>
+                <p>Plaatst een afbeelding.</p>
+            </div>
+            <div class="help-item">
+                <code>&lt;marquee&gt;Tekst&lt;/marquee&gt;</code>
+                <p>Laat tekst scrollen!</p>
+            </div>
+        </aside>
+
+        <section class="code-area">
+            <div class="panel-header">Jouw Code:</div>
+            <textarea id="sourceCode" placeholder="Typ hier je HTML code..."></textarea>
+            <button class="y2k-button" onclick="saveProgress()">[ Opslaan ]</button>
+        </section>
+
+        <section class="preview-area">
+            <div class="panel-header">Resultaat:</div>
+            <div id="livePreview" class="preview-box"></div>
+        </section>
+
+    </div>
+
+    <script>
+        const source = document.getElementById('sourceCode');
+        const preview = document.getElementById('livePreview');
+
+        // Elke keer als je typt, update de preview
+        source.addEventListener('input', function() {
+            preview.innerHTML = source.value;
+        });
+
+        // Dummy functie voor opslaan (komt later)
+        function saveProgress() {
+            alert("Code opgeslagen in het geheugen!");
+        }
+    </script>
+</body>
+</html>
