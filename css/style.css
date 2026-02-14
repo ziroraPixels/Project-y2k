@@ -1,8 +1,18 @@
-/* --- Y2K Cyber Style Update --- */
+/* --- 1. Fonts & Neon Kleuren --- */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Orbitron:wght@700&family=Share+Tech+Mono&family=Varela+Round&display=swap');
+
+:root {
+    --neon-pink: #FF00FF;
+    --neon-purple: #8000FF;
+    --matrix-green: #00FF00;
+    --cyber-black: #05000a;
+}
+
 body {
-    background: radial-gradient(circle at center, #001f3f 0%, #000510 100%);
-    color: #00f2ff; /* Cyber blauw */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Jouw layout: radial gradient & flex */
+    background: radial-gradient(circle at center, #1a0033 0%, var(--cyber-black) 100%);
+    color: var(--matrix-green); 
+    font-family: 'Varela Round', sans-serif; /* Jouw ronde font */
     margin: 0;
     display: flex;
     justify-content: center;
@@ -11,144 +21,112 @@ body {
     overflow-x: hidden;
 }
 
-/* De glazen container (Glassmorphism effect) */
+/* De glazen container (Layout exact zoals jij hem stuurde) */
 .main-container {
     width: 90%;
     max-width: 850px;
-    background: rgba(255, 255, 255, 0.05); /* Doorzichtig wit */
-    backdrop-filter: blur(12px); /* Maakt de achtergrond wazig */
+    background: rgba(20, 0, 40, 0.7); /* Frosted paars glas */
+    backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(0, 242, 255, 0.3);
-    border-radius: 30px; /* Ronde vormen zijn heel erg Y2K */
+    border: 1px solid var(--neon-purple); /* Neon paarse rand */
+    border-radius: 30px; 
     padding: 30px;
-    box-shadow: 0 0 40px rgba(0, 242, 255, 0.15);
+    box-shadow: 0 0 40px rgba(128, 0, 255, 0.3);
     text-align: center;
     position: relative;
 }
 
-/* --- Cyber Header Effecten --- */
+/* --- 2. Titels & Tekst (Fonts toegevoegd) --- */
 .glitter-text {
+    font-family: 'Orbitron', sans-serif;
     font-size: 3.5rem;
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 4px;
     color: #fff; 
-    text-shadow: 0 0 10px #00f2ff, 0 0 20px #00f2ff;
+    text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-purple);
     animation: pulse-glow 2s infinite ease-in-out;
 }
 
 @keyframes pulse-glow {
-    0%, 100% { opacity: 1; text-shadow: 0 0 10px #00f2ff, 0 0 20px #00f2ff; }
-    50% { opacity: 0.8; text-shadow: 0 0 20px #00f2ff, 0 0 40px #00f2ff; }
-}
-
-.mini.butterfly {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin: 20px 0;
-    filter: drop-shadow(0 0 5px #00f2ff);
+    0%, 100% { opacity: 1; text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-purple); }
+    50% { opacity: 0.8; text-shadow: 0 0 20px var(--neon-pink), 0 0 40px var(--neon-purple); }
 }
 
 .subtitle {
+    font-family: 'Share Tech Mono', monospace;
     font-size: 1.1rem;
-    color: #00f2ff;
+    color: var(--matrix-green);
     margin: 10px 0;
-    font-style: italic;
+    font-style: normal;
 }
 
-/* --- Cyber Login & Boxen --- */
+/* --- 3. Login Box (Layout behouden, kleur aangepast) --- */
 .login-box {
     width: 340px;
     margin: 0 auto 40px; 
-    border: 1px solid rgba(0, 242, 255, 0.5);
+    border: 1px solid var(--neon-pink);
     background: rgba(0, 0, 0, 0.4);
     border-radius: 20px;
     padding-bottom: 20px;
     overflow: hidden;
-    box-shadow: inset 0 0 15px rgba(0, 242, 255, 0.1);
+    box-shadow: inset 0 0 15px rgba(255, 0, 255, 0.1);
 }
 
 .box-header {
-    background: linear-gradient(90deg, #00f2ff, #008080);
-    color: #000;
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-pink));
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
     padding: 12px;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 20px;
 }
 
-/* --- Modern Cyber Formulier --- */
-.input-group {
-    margin-bottom: 18px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
+/* --- 4. Knoppen & Forms --- */
 .input-group label {
-    font-size: 0.85rem;
-    margin-bottom: 8px;
-    color: #00f2ff;
-    text-transform: uppercase;
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--matrix-green);
 }
 
 .input-group input {
-    width: 80%;
     background-color: rgba(0, 0, 0, 0.6);
-    border: 1px solid #00f2ff;
-    border-radius: 10px;
+    border: 1px solid var(--neon-purple);
     color: #fff;
-    padding: 10px;
-    text-align: center;
-    transition: 0.3s;
+    border-radius: 10px;
 }
 
-.input-group input:focus {
-    outline: none;
-    box-shadow: 0 0 15px #00f2ff;
-}
-
-/* --- De Y2K Capsule Knop (Geen hoekig grijs meer!) --- */
 .y2k-button {
-    background: linear-gradient(180deg, #00f2ff 0%, #008080 100%);
+    font-family: 'Comfortaa', cursive; /* Jouw favoriete ronde font */
+    background: linear-gradient(180deg, var(--neon-purple) 0%, var(--neon-pink) 100%);
     color: #ffffff;
     font-weight: bold;
-    font-size: 14px;
-    padding: 12px 28px;
-    text-transform: uppercase;
-    cursor: pointer;
-    margin-top: 10px;
     border: none;
     border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(0, 242, 255, 0.4);
-    transition: all 0.3s ease;
+    padding: 12px 28px;
+    text-transform: lowercase;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 0, 255, 0.4);
+    transition: 0.3s all ease;
 }
 
 .y2k-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 242, 255, 0.6);
+    box-shadow: 0 0 20px var(--matrix-green);
+    color: var(--matrix-green);
 }
 
-/* --- Footer --- */
-footer {
-    margin-top: 30px;
-}
-
+/* --- 5. Footer & Links --- */
 a {
-    color: #00f2ff;
-    text-decoration: none;
-    transition: 0.3s;
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--neon-pink);
 }
 
 a:hover {
-    color: #fff;
-    text-shadow: 0 0 5px #00f2ff;
+    color: var(--matrix-green);
+    text-shadow: 0 0 5px var(--matrix-green);
 }
 
 .copyright {
-    font-size: 0.75rem;
-    color: rgba(0, 242, 255, 0.5);
+    color: var(--neon-purple);
 }
