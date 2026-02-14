@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Y2K - Profiel Bewerken</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+    <div class="main-container">
+        <img src="https://web.archive.org/web/20090831102034if_/http://www.geocities.com/snbuckeye/welcfae.gif">
+        <br>
+        <h1 class="glitter-text">PROFIEL</h1>
+        
+        <div class="mini butterfly">
+            <img src="https://blob.gifcities.org/gifcities/6EJZFXT6FTRNQ7FBRGRX2GGHAHRQI5KJ.gif" alt="Butterfly" width="30">
+            <span class="subtitle">"Update je digitale identiteit"</span>
+            <img src="https://blob.gifcities.org/gifcities/6EJZFXT6FTRNQ7FBRGRX2GGHAHRQI5KJ.gif" alt="Butterfly" width="30">
+        </div>
+
+        <div class="login-box" style="width: 100%; max-width: 450px;">
+            <div class="box-header">BEWERK JE GEGEVENS</div>
+            
+            <form onsubmit="event.preventDefault(); alert('Profiel succesvol bijgewerkt! 💾'); window.location.href='dashboard.html';">
+                <div class="input-group">
+                    <label>GEBRUIKERSNAAM:</label>
+                    <input type="text" placeholder="ZiroraPixels" required>
+                </div>
+
+                <div class="input-group">
+                    <label>WACHTWOORD:</label>
+                    <input type="password" placeholder="••••••••••">
+                </div>
+
+                <div class="input-group">
+                    <label>PROFIEL TEKST:</label>
+                    <textarea style="width: 80%; background: rgba(0,0,0,0.6); border: 1px solid #00f2ff; border-radius: 10px; color: #fff; padding: 10px; font-family: inherit; text-align: center;" rows="3" placeholder="I love Y2K aesthetics!"></textarea>
+                </div>
+
+                <button type="submit" class="y2k-button">[ OPSLAAN ]</button>
+            </form>
+        </div>
+
+        <footer>
+            <p><a href="dashboard.html">Terug naar Dashboard</a></p>
+            <img src="https://blob.gifcities.org/gifcities/2SKRVMS2FNF3FNZJU3PV5YQVIBHXVMBC.gif">
+            <p class="copyright">© 2026 - ZiroraPixels Productions</p>
+        </footer>
+    </div>
+
+</body>
+</html>
