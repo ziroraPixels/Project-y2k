@@ -20,15 +20,15 @@
         <div class="login-box">
             <div class="box-header">AANMELDEN BIJ PROJECT Y2K</div>
             
-            <form action="dashboard.html" method="POST">
+            <form onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
                 <div class="input-group">
                     <label for="username">GEBRUIKERSNAAM:</label>
-                    <input type="text" id="username" name="username" placeholder="Gebruikersnaam" required>
+                    <input type="text" id="username" placeholder="Gebruikersnaam" required>
                 </div>
 
                 <div class="input-group">
                     <label for="password">WACHTWOORD:</label>
-                    <input type="password" id="password" name="password" placeholder="••••••••••" required>
+                    <input type="password" id="password" placeholder="••••••••••" required>
                 </div>
 
                 <button type="submit" class="y2k-button">[ LOG IN ]</button>
@@ -36,7 +36,7 @@
 
             <div class="footer-links">
                 <p>Nog geen lid?<br>
-                <a href="register.html">Maak er hier een aan!</a></p>
+                <a href="signup.html">Maak er hier een aan!</a></p>
             </div>
         </div>
 
