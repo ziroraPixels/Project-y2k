@@ -1,0 +1,121 @@
+/* Zorg dat de body de volledige hoogte pakt */
+body {
+    display: block; /* Reset de flexbox van de login pagina */
+    padding: 0;
+}
+
+/* De balk bovenin */
+.top-bar {
+    background-color: #000;
+    border-bottom: 2px solid #00FF00;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    color: #00FF00;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.top-bar a {
+    color: #FF00FF;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.top-bar a:hover {
+    color: #FFFFFF;
+}
+
+/* De container voor de 3 kolommen */
+.main-editor-container {
+    display: flex;
+    height: calc(100vh - 50px); /* Volledige hoogte min de balk */
+    background-color: #310044;
+}
+
+/* --- KOLOM 1: De Cheat Sheet --- */
+.sidebar-help {
+    width: 250px;
+    background-color: #000066;
+    border-right: 3px double #00FF00;
+    padding: 15px;
+    overflow-y: auto; /* Scrollen als de lijst te lang is */
+    color: #FFFFFF;
+}
+
+.sidebar-help h3 {
+    color: #FF00FF;
+    border-bottom: 1px dashed #FF00FF;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+.help-item {
+    margin-bottom: 15px;
+    background-color: #000;
+    border: 1px solid #00FF00;
+    padding: 5px;
+}
+
+.help-item code {
+    color: #00FF00;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.help-item p {
+    margin: 0;
+    font-size: 0.8em;
+    color: #ccc;
+}
+
+/* --- KOLOM 2: Code Area --- */
+.code-area {
+    flex: 1; /* Neemt de helft van de overgebleven ruimte */
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-right: 2px solid #00FF00;
+}
+
+textarea {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: #00FF00;
+    font-family: 'Courier New', Courier, monospace;
+    border: 2px inset #ccc;
+    padding: 10px;
+    resize: none; /* Geen sleep-hoekje */
+    font-size: 14px;
+}
+
+/* --- KOLOM 3: Preview Area --- */
+.preview-area {
+    flex: 1; /* Neemt de andere helft */
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #FFFFFF; /* Wit papier effect voor preview */
+}
+
+.panel-header {
+    background-color: #c0c0c0;
+    color: #000;
+    border: 1px solid #fff;
+    border-bottom: 1px solid #404040;
+    padding: 2px 5px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* De box waarin de preview komt */
+.preview-box {
+    flex-grow: 1;
+    border: 2px inset #ccc;
+    padding: 10px;
+    overflow: auto;
+    color: #000000; /* Standaard tekst zwart in preview */
+    font-family: Arial, sans-serif; /* Standaard web font */
+}
