@@ -1,92 +1,105 @@
-/* --- Y2K Cyber Editor Style --- */
+/* --- Editor Cyber-Neon Style --- */
 
-/* De hoofdcontainer van de editor */
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Orbitron:wght@700&family=Share+Tech+Mono&family=Varela+Round&display=swap');
+
+:root {
+    --neon-pink: #FF00FF;
+    --neon-purple: #8000FF;
+    --matrix-green: #00FF00;
+    --cyber-black: #05000a;
+}
+
+/* De container behoudt de indeling die je mooi vond */
 .editor-container {
     display: flex;
     height: 80vh;
-    background: rgba(0, 0, 0, 0.6);
-    border: 1px solid rgba(0, 242, 255, 0.4);
-    border-radius: 20px;
+    background: rgba(20, 0, 40, 0.7); /* Frosted paars glas effect */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 2px solid var(--neon-purple);
+    border-radius: 25px;
     overflow: hidden;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 30px rgba(0, 242, 255, 0.1);
+    box-shadow: 0 0 30px rgba(128, 0, 255, 0.3);
 }
 
-/* De zijbalk met de HTML-uitleg */
+/* De zijbalk (Register) aan de linkerkant */
 .sidebar-help {
     width: 30%;
-    background: rgba(0, 15, 30, 0.8);
-    border-right: 1px solid rgba(0, 242, 255, 0.3);
-    padding: 15px;
-    text-align: left;
+    background: rgba(0, 0, 0, 0.6);
+    border-right: 2px solid var(--neon-pink);
+    padding: 20px;
     color: #fff;
-}
-
-.help-scroll {
-    height: calc(100% - 40px);
+    font-family: 'Varela Round', sans-serif;
     overflow-y: auto;
-    padding-right: 10px;
 }
 
-/* De typische Cyber-scrollbar */
-.help-scroll::-webkit-scrollbar {
-    width: 6px;
-}
-.help-scroll::-webkit-scrollbar-thumb {
-    background: #00f2ff;
-    border-radius: 10px;
-}
-
-.help-item {
-    margin-bottom: 20px;
-    border-bottom: 1px solid rgba(0, 242, 255, 0.2);
-    padding-bottom: 10px;
-}
-
-.help-item code {
-    display: block;
-    background: #000;
-    color: #00f2ff;
-    padding: 5px;
-    border-radius: 5px;
+/* De koppen in de editor */
+.box-header {
+    font-family: 'Orbitron', sans-serif;
+    background: var(--neon-purple);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
     font-size: 0.9rem;
-    margin-bottom: 5px;
-    border: 1px solid #00f2ff;
+    letter-spacing: 2px;
 }
 
-/* Het tekstgebied waar je de code typt */
+/* De HTML tags in de zijbalk */
+.help-item code {
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--matrix-green);
+    background: #000;
+    padding: 4px;
+    border: 1px solid var(--matrix-green);
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Het gedeelte waar je de code typt (Rechterkant) */
 .editor-main {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    padding: 15px;
+    padding: 20px;
     background: rgba(0, 0, 0, 0.3);
 }
 
-#html-code {
+textarea#html-code {
     width: 100%;
     height: 100%;
-    background: #000810;
-    color: #00f2ff;
-    border: 1px solid rgba(0, 242, 255, 0.5);
-    border-radius: 10px;
-    padding: 15px;
-    font-family: 'Courier New', monospace;
-    font-size: 1rem;
-    resize: none;
+    background-color: #000;
+    color: var(--matrix-green); /* Matrix groene letters */
+    font-family: 'Share Tech Mono', monospace;
+    border: 1px solid var(--neon-purple);
+    border-radius: 15px;
+    padding: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
     outline: none;
-    box-shadow: inset 0 0 10px rgba(0, 242, 255, 0.2);
+    resize: none;
 }
 
-#html-code:focus {
-    border-color: #fff;
-    box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+/* Focus effect: als je klikt gaat de rand gloeien */
+textarea#html-code:focus {
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 15px var(--neon-pink);
 }
 
-/* De knoppenbalk onder de editor */
+/* Knoppen onder de editor */
 .editor-footer {
     padding: 15px;
     display: flex;
     justify-content: center;
     gap: 20px;
+}
+
+/* Custom Scrollbar voor de zijbalk in neon-roze */
+.sidebar-help::-webkit-scrollbar {
+    width: 8px;
+}
+.sidebar-help::-webkit-scrollbar-thumb {
+    background: var(--neon-pink);
+    border-radius: 10px;
 }
