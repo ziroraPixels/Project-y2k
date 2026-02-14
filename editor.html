@@ -3,76 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Y2K - Edit Mode</title>
+    <title>Project Y2K - Editor</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/editor.css"> 
+    <link rel="stylesheet" href="css/editor.css">
 </head>
 <body>
 
-    <nav class="top-bar">
-        <span>Ingelogd als: <b id="user-display">Gast</b></span>
-        <div class="nav-links">
-            <a href="dashboard.html">[ Dashboard ]</a>
-            <a href="index.html" onclick="logout()">[ Uitloggen ]</a>
+    <div class="main-container">
+        <h1 class="glitter-text">Project Y2K</h1>
+        <div class="mini butterfly">🦋 🦋</div>
+        <p class="subtitle">"Bringing the year 2000 back, one pixel at a time"</p>
+
+        <div class="editor-container">
+            
+            <aside class="sidebar-help">
+                <div class="box-header">HTML Register</div>
+                <div class="help-scroll">
+                    <div class="help-item">
+                        <code>&lt;h1&gt;...&lt;/h1&gt;</code>
+                        <span>Grote hoofdtitel</span>
+                    </div>
+                    <div class="help-item">
+                        <code>&lt;p&gt;...&lt;/p&gt;</code>
+                        <span>Standaard tekstparagraaf</span>
+                    </div>
+                    <div class="help-item">
+                        <code>&lt;img src="..."&gt;</code>
+                        <span>Afbeelding toevoegen</span>
+                    </div>
+                    <div class="help-item">
+                        <code>&lt;a href="..."&gt;</code>
+                        <span>Link maken</span>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="editor-main">
+                <div class="box-header">Code Editor</div>
+                <textarea id="html-code" placeholder="Typ hier je HTML code..."></textarea>
+                
+                <div class="editor-footer">
+                    <button class="y2k-button">Opslaan</button>
+                    <button class="y2k-button">Preview</button>
+                </div>
+            </main>
         </div>
-    </nav>
 
-    <div class="main-editor-container">
-        
-        <aside class="sidebar-help">
-            <h3>HTML Hulp</h3>
-            <div class="help-item">
-                <code>&lt;b&gt;Tekst&lt;/b&gt;</code>
-                <p>Maakt tekst <b>dikgedrukt</b>.</p>
-            </div>
-            <div class="help-item">
-                <code>&lt;i&gt;Tekst&lt;/i&gt;</code>
-                <p>Maakt tekst <i>schuin</i>.</p>
-            </div>
-            <div class="help-item">
-                <code>&lt;u&gt;Tekst&lt;/u&gt;</code>
-                <p>Maakt tekst <u>onderstreept</u>.</p>
-            </div>
-            <div class="help-item">
-                <code>&lt;br&gt;</code>
-                <p>Gaat naar de volgende regel (Enter).</p>
-            </div>
-            <div class="help-item">
-                <code>&lt;img src="plaatje.gif"&gt;</code>
-                <p>Plaatst een afbeelding.</p>
-            </div>
-            <div class="help-item">
-                <code>&lt;marquee&gt;Tekst&lt;/marquee&gt;</code>
-                <p>Laat tekst scrollen!</p>
-            </div>
-        </aside>
-
-        <section class="code-area">
-            <div class="panel-header">Jouw Code:</div>
-            <textarea id="sourceCode" placeholder="Typ hier je HTML code..."></textarea>
-            <button class="y2k-button" onclick="saveProgress()">[ Opslaan ]</button>
-        </section>
-
-        <section class="preview-area">
-            <div class="panel-header">Resultaat:</div>
-            <div id="livePreview" class="preview-box"></div>
-        </section>
-
+        <footer>
+            <p><a href="dashboard.html">Terug naar Dashboard</a></p>
+            <p class="copyright">© 2026 - ZiroraPixels Productions</p>
+        </footer>
     </div>
 
-    <script>
-        const source = document.getElementById('sourceCode');
-        const preview = document.getElementById('livePreview');
-
-        // Elke keer als je typt, update de preview
-        source.addEventListener('input', function() {
-            preview.innerHTML = source.value;
-        });
-
-        // Dummy functie voor opslaan (komt later)
-        function saveProgress() {
-            alert("Code opgeslagen in het geheugen!");
-        }
-    </script>
 </body>
 </html>
