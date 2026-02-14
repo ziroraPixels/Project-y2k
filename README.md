@@ -27,8 +27,7 @@ Ik heb dit project vanaf de grond opgebouwd om te laten zien hoe frontend en bac
 | Onderdeel | Technologie |
 | :--- | :--- |
 | **Frontend** | HTML5, CSS3 (Custom Styles), JavaScript |
-| **Backend** | Python (Flask Framework) |
-| **Database** | SQL / SQLAlchemy |
+| **Backend** | In aanbouw (Toekomstplan: Python/Flask) |
 | **Vibe** | Pure Nostalgie |
 
 ---
