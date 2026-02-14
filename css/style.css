@@ -29,6 +29,7 @@ body::-webkit-scrollbar {
     position: relative;
 }
 
+/* --- Header & Text Effects --- */
 .glitter-text {
     font-size: 3rem;
     margin: 0;
@@ -45,9 +46,26 @@ body::-webkit-scrollbar {
     100% { opacity: 1; text-shadow: 2px 2px #FF00FF, 0 0 10px #FF69B4; }
 }
 
+/* Nieuwe Flexbox styling voor de vlinders en tekst */
+.mini.butterfly {
+    display: flex;           /* Zet ze naast elkaar */
+    justify-content: center; /* In het midden van de container */
+    align-items: center;     /* Verticaal uitgelijnd */
+    gap: 15px;               /* Ruimte tussen vlinder en tekst */
+    margin: 20px 0;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #00FF00;
+    margin: 0;
+}
+
+/* --- Login Box Area --- */
 .login-box {
     width: 300px;
-    margin: 0 auto 40px;
+    /* margin: boven auto onder(vervangt de <br>) */
+    margin: 0 auto 60px; 
     border: 2px solid #00ff00;
     background-color: #310044;
 }
@@ -68,51 +86,36 @@ body::-webkit-scrollbar {
     padding: 5px;
 }
 
-.pixel-doll {
-    width: 80px;
-    height: auto;
-    filter: drop-shadow(0 0 5px #FF00FF);
-    animation: float 3s ease-in-out infinite;
-}
-/* --- Extra Corner Decorations: Top Left & Bottom Right --- */
-
-.doll-top-left {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    margin-top: 20px;
-    margin-left: 20px;
-    padding: 10px;
-}
-
-.doll-bottom-right {
-    position: fixed;
-    bottom: 0;
-    right: 0; /* Veranderd van left naar right! */
-    z-index: 10;
+/* --- De Retro Windows 95 Button (Consistentie!) --- */
+.y2k-button {
+    background-color: #c0c0c0; 
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 10px;
     
-    /* Afstand tot de rechter- en onderkant */
-    margin-bottom: 20px;
-    margin-right: 20px; /* Veranderd van margin-left naar margin-right */
-    
-    padding: 10px;
+    /* 3D Bevel effect */
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+    outline: none;
 }
 
-/* De plaatjes zelf */
-.doll-top-left .pixel-doll, 
-.doll-bottom-right .pixel-doll {
-    width: 60px;
-    height: auto;
-    display: block;
+.y2k-button:hover {
+    /* Klein detail: tekst kleur verandering bij hover mag best */
+    color: #FF00FF; 
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-@keyframes float2 {
-    0%, 100% { transform: translateY(0) rotate(-1deg); }
-    50% { transform: translateY(-12px) rotate(1deg); }
+.y2k-button:active {
+    /* Het 'indrukken' effect */
+    border-top: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    transform: translate(1px, 1px);
 }
