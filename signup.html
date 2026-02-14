@@ -7,88 +7,53 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
     <div class="main-container">
-        <header>
-            <h1 class="glitter-text">Nieuw Lid?</h1>
-            <p class="subtitle">Word onderdeel van de community!</p>
-        </header>
+        <h1 class="glitter-text">PROJECT Y2K</h1>
+        
+        <div class="mini butterfly">
+            <span>🦋</span>
+            <span class="subtitle">"Join the digital revolution of the new millennium"</span>
+            <span>🦋</span>
+        </div>
 
         <div class="login-box">
-            <div class="box-header">
-                <span>Vul je gegevens in</span>
-            </div>
-            <form id="signup-form">
+            <div class="box-header">NIEUW ACCOUNT AANMAKEN</div>
+            
+            <form action="index.html" method="POST">
                 <div class="input-group">
-                    <label for="new-username">Kies Gebruikersnaam:</label>
-                    <input type="text" id="new-username" autocomplete="off">
-                </div>
-                
-                <div class="input-group">
-                    <label for="email">E-mailadres (nep):</label>
-                    <input type="email" id="email" placeholder="naam@cu2.nl">
+                    <label for="new-username">GEBRUIKERSNAAM:</label>
+                    <input type="text" id="new-username" name="username" placeholder="Kies een naam" required>
                 </div>
 
                 <div class="input-group">
-                    <label for="new-password">Wachtwoord:</label>
-                    <input type="password" id="new-password">
+                    <label for="email">E-MAILADRES:</label>
+                    <input type="email" id="email" name="email" placeholder="naam@voorbeeld.nl" required>
                 </div>
 
                 <div class="input-group">
-                    <label for="confirm-password">Herhaal Wachtwoord:</label>
-                    <input type="password" id="confirm-password">
+                    <label for="new-password">WACHTWOORD:</label>
+                    <input type="password" id="new-password" name="password" placeholder="••••••••••" required>
                 </div>
 
-                <div class="button-group">
-                    <button type="button" class="y2k-button" onclick="registerUser()">[ Maak Profiel ]</button>
+                <div class="input-group">
+                    <label for="confirm-password">BEVESTIG WACHTWOORD:</label>
+                    <input type="password" id="confirm-password" name="confirm" placeholder="••••••••••" required>
                 </div>
-                
-                <p class="signup-link">Toch al een account? <br>
-                    <a href="index.html">Ga terug naar inloggen</a>
-                </p>
+
+                <button type="submit" class="y2k-button">[ REGISTREREN ]</button>
             </form>
+
+            <div class="footer-links">
+                <p>Al een account?<br>
+                <a href="index.html">Klik hier om in te loggen!</a></p>
+            </div>
         </div>
 
         <footer>
-            <p class="copyright">&copy; 2026 - ZiroraPixels Productions</p>
+            <p class="copyright">© 2026 - ZiroraPixels Productions</p>
         </footer>
     </div>
 
-    <script>
-        function registerUser() {
-            // 1. Haal de waardes op
-            var username = document.getElementById('new-username').value;
-            var pass1 = document.getElementById('new-password').value;
-            var pass2 = document.getElementById('confirm-password').value;
-
-            // 2. Validatie Checks (Hier scoor je punten mee!)
-            if (username.trim() === "") {
-                alert("Foutmelding: Je moet wel een naam kiezen!");
-                return; // Stop de functie
-            }
-
-            if (pass1 === "" || pass2 === "") {
-                alert("Foutmelding: Vul een wachtwoord in.");
-                return;
-            }
-
-            if (pass1 !== pass2) {
-                alert("Foutmelding: De wachtwoorden komen niet overeen!");
-                // Maak de velden leeg zodat ze het opnieuw kunnen proberen
-                document.getElementById('new-password').value = "";
-                document.getElementById('confirm-password').value = "";
-                return;
-            }
-
-            // 3. Alles goed? Sla op en ga naar de editor!
-            // We doen alsof de registratie gelukt is
-            alert("Welkom bij de club, " + username + "! Je profiel is aangemaakt.");
-            
-            // Sla de naam op zodat we die op de volgende pagina kunnen gebruiken
-            localStorage.setItem('currentUser', username);
-            
-            // Stuur door naar de editor
-            window.location.href = 'editor.html';
-        }
-    </script>
 </body>
 </html>
