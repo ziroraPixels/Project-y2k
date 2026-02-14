@@ -10,31 +10,38 @@
     <div class="main-container">
         <header>
             <h1 class="glitter-text">Project Y2K</h1>
-           <div class="mini butterfly"><img src="https://blob.gifcities.org/gifcities/6EJZFXT6FTRNQ7FBRGRX2GGHAHRQI5KJ.gif" alt="mini butterfly"><p class="subtitle">"Bringing the year 2000 back, one pixel at a time"</p><img src="https://blob.gifcities.org/gifcities/6EJZFXT6FTRNQ7FBRGRX2GGHAHRQI5KJ.gif" alt="mini butterfly">
-           </div>
+            <div class="mini butterfly">
+                <img src="https://blob.gifcities.org/gifcities/6EJZFXT6FTRNQ7FBRGRX2GGHAHRQI5KJ.gif" alt="mini butterfly">
+                <p class="subtitle">"Bringing the year 2000 back, one pixel at a time"</p>
+                <img src="https://blob.gifcities.org/gifcities/6EJZFXT6FTRNQ7FBRGRX2GGHAHRQI5KJ.gif" alt="mini butterfly">
+            </div>
         </header>
 
         <div class="login-box">
             <div class="box-header">
-                <span>Log in op je profiel</span>
+                <span>Aanmelden bij Project Y2K</span>
             </div>
-            <form id="login-form">
+            <div style="padding: 20px;">
                 <div class="input-group">
                     <label for="username">Gebruikersnaam:</label>
-                    <input type="text" id="username" name="username" autocomplete="off">
+                    <input type="text" id="username" placeholder="Typ je naam..." autocomplete="off">
                 </div>
+
                 <div class="input-group">
                     <label for="password">Wachtwoord:</label>
-                    <input type="password" id="password" name="password">
+                    <input type="password" id="password" placeholder="******">
                 </div>
+
                 <div class="button-group">
-                    <button type="button" class="y2k-button">[ Log In ]</button>
+                    <button type="button" class="y2k-button" onclick="loginUser()">[ Log In ]</button>
                 </div>
-                <p class="signup-link">Nog geen profiel? <br>
-                    <a href="signup.html">Maak er hier een aan!</a></p>
-            </form>
+                
+                <p class="signup-link" style="margin-top: 15px; font-size: 0.8rem;">
+                    Nog geen lid? <br>
+                    <a href="signup.html">Maak er hier een aan!</a>
+                </p>
+            </div>
         </div>
-        <br>
         <footer>
             <div class="hit-counter">
                 Bezoekers: <span class="counter-digits">000404</span>
@@ -46,5 +53,28 @@
             <p class="copyright">&copy; 2026 - ZiroraPixels Productions</p>
         </footer>
     </div>
+
+    <script>
+        function loginUser() {
+            const nameInput = document.getElementById('username');
+            const username = nameInput.value.trim();
+
+            if (username !== "") {
+                // Sla de naam op voor het dashboard
+                localStorage.setItem('currentUser', username);
+                // Ga naar de dashboard pagina
+                window.location.href = 'dashboard.html';
+            } else {
+                alert("Halt! ✋ Voer eerst je gebruikersnaam in.");
+            }
+        }
+
+        // Zorg dat je ook met de Enter-toets kunt inloggen
+        document.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                loginUser();
+            }
+        });
+    </script>
 </body>
 </html>
