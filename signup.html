@@ -20,25 +20,25 @@
         <div class="login-box">
             <div class="box-header">NIEUW ACCOUNT AANMAKEN</div>
             
-            <form action="index.html" method="POST">
+            <form onsubmit="event.preventDefault(); alert('Account aangemaakt! Je kunt nu inloggen.'); window.location.href='index.html';">
                 <div class="input-group">
                     <label for="new-username">GEBRUIKERSNAAM:</label>
-                    <input type="text" id="new-username" name="username" placeholder="Kies een naam" required>
+                    <input type="text" id="new-username" placeholder="Kies een naam" required>
                 </div>
 
                 <div class="input-group">
                     <label for="email">E-MAILADRES:</label>
-                    <input type="email" id="email" name="email" placeholder="naam@voorbeeld.nl" required>
+                    <input type="email" id="email" placeholder="naam@voorbeeld.nl" required>
                 </div>
 
                 <div class="input-group">
                     <label for="new-password">WACHTWOORD:</label>
-                    <input type="password" id="new-password" name="password" placeholder="••••••••••" required>
+                    <input type="password" id="new-password" placeholder="••••••••••" required>
                 </div>
 
                 <div class="input-group">
                     <label for="confirm-password">BEVESTIG WACHTWOORD:</label>
-                    <input type="password" id="confirm-password" name="confirm" placeholder="••••••••••" required>
+                    <input type="password" id="confirm-password" placeholder="••••••••••" required>
                 </div>
 
                 <button type="submit" class="y2k-button">[ REGISTREREN ]</button>
