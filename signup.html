@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Y2K - Registreren</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <h1 class="glitter-text">Nieuw Lid?</h1>
+            <p class="subtitle">Word onderdeel van de community!</p>
+        </header>
+
+        <div class="login-box">
+            <div class="box-header">
+                <span>Vul je gegevens in</span>
+            </div>
+            <form id="signup-form">
+                <div class="input-group">
+                    <label for="new-username">Kies Gebruikersnaam:</label>
+                    <input type="text" id="new-username" autocomplete="off">
+                </div>
+                
+                <div class="input-group">
+                    <label for="email">E-mailadres (nep):</label>
+                    <input type="email" id="email" placeholder="naam@cu2.nl">
+                </div>
+
+                <div class="input-group">
+                    <label for="new-password">Wachtwoord:</label>
+                    <input type="password" id="new-password">
+                </div>
+
+                <div class="input-group">
+                    <label for="confirm-password">Herhaal Wachtwoord:</label>
+                    <input type="password" id="confirm-password">
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="y2k-button" onclick="registerUser()">[ Maak Profiel ]</button>
+                </div>
+                
+                <p class="signup-link">Toch al een account? <br>
+                    <a href="index.html">Ga terug naar inloggen</a>
+                </p>
+            </form>
+        </div>
+
+        <footer>
+            <p class="copyright">&copy; 2026 - ZiroraPixels Productions</p>
+        </footer>
+    </div>
+
+    <script>
+        function registerUser() {
+            // 1. Haal de waardes op
+            var username = document.getElementById('new-username').value;
+            var pass1 = document.getElementById('new-password').value;
+            var pass2 = document.getElementById('confirm-password').value;
+
+            // 2. Validatie Checks (Hier scoor je punten mee!)
+            if (username.trim() === "") {
+                alert("Foutmelding: Je moet wel een naam kiezen!");
+                return; // Stop de functie
+            }
+
+            if (pass1 === "" || pass2 === "") {
+                alert("Foutmelding: Vul een wachtwoord in.");
+                return;
+            }
+
+            if (pass1 !== pass2) {
+                alert("Foutmelding: De wachtwoorden komen niet overeen!");
+                // Maak de velden leeg zodat ze het opnieuw kunnen proberen
+                document.getElementById('new-password').value = "";
+                document.getElementById('confirm-password').value = "";
+                return;
+            }
+
+            // 3. Alles goed? Sla op en ga naar de editor!
+            // We doen alsof de registratie gelukt is
+            alert("Welkom bij de club, " + username + "! Je profiel is aangemaakt.");
+            
+            // Sla de naam op zodat we die op de volgende pagina kunnen gebruiken
+            localStorage.setItem('currentUser', username);
+            
+            // Stuur door naar de editor
+            window.location.href = 'editor.html';
+        }
+    </script>
+</body>
+</html>
