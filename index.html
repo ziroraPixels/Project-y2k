@@ -3,78 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Y2K - Welkom!</title>
+    <title>Project Y2K - Login</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
     <div class="main-container">
-        <header>
-            <h1 class="glitter-text">Project Y2K</h1>
-            <div class="mini butterfly">
-                <img src="https://blob.gifcities.org/gifcities/6EJZFXT6FTRNQ7FBRGRX2GGHAHRQI5KJ.gif" alt="mini butterfly">
-                <p class="subtitle">"Bringing the year 2000 back, one pixel at a time"</p>
-                <img src="https://blob.gifcities.org/gifcities/6EJZFXT6FTRNQ7FBRGRX2GGHAHRQI5KJ.gif" alt="mini butterfly">
-            </div>
-        </header>
+        <h1 class="glitter-text">PROJECT Y2K</h1>
+        
+        <div class="mini butterfly">
+            <span>🦋</span>
+            <span class="subtitle">"Bringing the year 2000 back, one pixel at a time"</span>
+            <span>🦋</span>
+        </div>
 
         <div class="login-box">
-            <div class="box-header">
-                <span>Aanmelden bij Project Y2K</span>
-            </div>
-            <div style="padding: 20px;">
+            <div class="box-header">AANMELDEN BIJ PROJECT Y2K</div>
+            
+            <form action="dashboard.html" method="POST">
                 <div class="input-group">
-                    <label for="username">Gebruikersnaam:</label>
-                    <input type="text" id="username" placeholder="Typ je naam..." autocomplete="off">
+                    <label for="username">GEBRUIKERSNAAM:</label>
+                    <input type="text" id="username" name="username" placeholder="Gebruikersnaam" required>
                 </div>
 
                 <div class="input-group">
-                    <label for="password">Wachtwoord:</label>
-                    <input type="password" id="password" placeholder="******">
+                    <label for="password">WACHTWOORD:</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••••" required>
                 </div>
 
-                <div class="button-group">
-                    <button type="button" class="y2k-button" onclick="loginUser()">[ Log In ]</button>
-                </div>
-                
-                <p class="signup-link" style="margin-top: 15px; font-size: 0.8rem;">
-                    Nog geen lid? <br>
-                    <a href="signup.html">Maak er hier een aan!</a>
-                </p>
+                <button type="submit" class="y2k-button">[ LOG IN ]</button>
+            </form>
+
+            <div class="footer-links">
+                <p>Nog geen lid?<br>
+                <a href="register.html">Maak er hier een aan!</a></p>
             </div>
         </div>
+
+        <div class="extras">
+            <p class="subtitle">Bezoekers: 000404</p>
+            <img src="https://web.archive.org/web/20090829035721/http://geocities.com/Heartland/6315/underconstruction.gif" alt="Under Construction" style="margin: 10px 0;">
+            <p class="subtitle">Deze site is momenteel in aanbouw!</p>
+        </div>
+
         <footer>
-            <div class="hit-counter">
-                Bezoekers: <span class="counter-digits">000404</span>
-            </div>
-            <div class="under-construction">
-                <img src="https://blob.gifcities.org/gifcities/X5DTRW5U6AEXRUH3IT54NFLATWVRHNCD.gif" alt="Under Construction GIF">
-                <p>Deze site is momenteel in aanbouw!</p>
-            </div>
-            <p class="copyright">&copy; 2026 - ZiroraPixels Productions</p>
+            <p class="copyright">© 2026 - ZiroraPixels Productions</p>
         </footer>
     </div>
 
-    <script>
-        function loginUser() {
-            const nameInput = document.getElementById('username');
-            const username = nameInput.value.trim();
-
-            if (username !== "") {
-                // Sla de naam op voor het dashboard
-                localStorage.setItem('currentUser', username);
-                // Ga naar de dashboard pagina
-                window.location.href = 'dashboard.html';
-            } else {
-                alert("Halt! ✋ Voer eerst je gebruikersnaam in.");
-            }
-        }
-
-        // Zorg dat je ook met de Enter-toets kunt inloggen
-        document.addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') {
-                loginUser();
-            }
-        });
-    </script>
 </body>
 </html>
