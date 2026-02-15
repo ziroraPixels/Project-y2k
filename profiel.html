@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Y2K - Profiel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* De profiel layout met sidebar */
+        .profile-container {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            text-align: left;
+        }
+
+        /* De linker kant (De HTML die in de editor is gemaakt) */
+        .profile-main {
+            flex: 3;
+            background: rgba(255, 255, 255, 0.9); /* Licht wit canvas voor de bio */
+            border: 2px solid #00f2ff;
+            border-radius: 10px;
+            padding: 20px;
+            min-height: 400px;
+            color: #333; /* Tekstkleur voor binnen het profiel */
+        }
+
+        /* De rechter kant (Menu) */
+        .profile-sidebar {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #00f2ff;
+            border-radius: 10px;
+            padding: 15px;
+            height: fit-content;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px dashed #00f2ff;
+        }
+
+        /* Krabbels sectie onderaan */
+        .krabbel-section {
+            margin-top: 40px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            border-top: 3px double #00f2ff;
+        }
+
+        .krabbel-box {
+            background: #000;
+            border: 1px solid #00f2ff;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .krabbel-name {
+            color: #00f2ff;
+            font-weight: bold;
+            font-size: 0.8em;
+        }
+
+        textarea#krabbel-input {
+            width: 100%;
+            background: #222;
+            color: #fff;
+            border: 1px solid #00f2ff;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .profile-container { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container" style="max-width: 1100px;">
+        
+        <h1 class="glitter-text">PROFIEL: ZIRORAPIXELS</h1>
+        <p class="subtitle" style="font-size: 0.9em;">Lid sinds: 15 februari 2026</p>
+
+        <div class="mini butterfly">
+            <img src="https://blob.gifcities.org/gifcities/6EJZFXT6FTRNQ7FBRGRX2GGHAHRQI5KJ.gif" alt="Butterfly" width="30">
+            <span class="subtitle">"Welkom op mijn persoonlijke digitale ruimte"</span>
+            <img src="https://blob.gifcities.org/gifcities/6EJZFXT6FTRNQ7FBRGRX2GGHAHRQI5KJ.gif" alt="Butterfly" width="30">
+        </div>
+
+        <div class="profile-container">
+            <div class="profile-main" id="profile-content">
+                <h2>Welkom!</h2>
+                <p>Dit is de plek waar mijn custom HTML profiel komt te staan.</p>
+                <marquee>Kijk om je heen!</marquee>
+            </div>
+
+            <aside class="profile-sidebar">
+                <div class="box-header" style="font-size: 0.7em;">MENU</div>
+                <ul class="sidebar-menu">
+                    <li><a href="dashboard.html">Mijn Dashboard</a></li>
+                    <li><a href="editor.html">Bewerk Profiel</a></li>
+                    <li><a href="about.html">Over Project Y2K</a></li>
+                </ul>
+                <br>
+                <p style="font-size: 0.7em; color: #00f2ff;">Status: <b>Zonnetje schijnt! ☀️</b></p>
+            </aside>
+        </div>
+
+        <div class="krabbel-section">
+            <div class="box-header">Laat een berichtje achter!</div>
+            
+            <div id="krabbel-lijst">
+                <div class="krabbel-box">
+                    <span class="krabbel-name">Vriendin_X (15:30):</span>
+                    <p>Echt vette profielpagina heb je gemaakt! Die vlinders zijn top! ✨</p>
+                </div>
+            </div>
+
+            <textarea id="krabbel-input" rows="3" placeholder="Laat een krabbel achter..."></textarea>
+            <button class="y2k-button" onclick="addKrabbel()" style="padding: 5px 15px; font-size: 0.8em;">verzenden</button>
+        </div>
+
+        <footer>
+            <img src="https://blob.gifcities.org/gifcities/RI3Z4QPOA3R664NXCR7MNJ22K5UGDIB4.gif" alt="Terug">
+            <p><a href="dashboard.html">Terug naar Dashboard</a></p>
+            <br>
+            <p class="copyright">© 2026 - ZiroraPixels Productions</p>
+        </footer>
+    </div>
+
+    <script>
+        // Functie om een krabbel toe te voegen (voor nu alleen lokaal zichtbaar)
+        function addKrabbel() {
+            const input = document.getElementById('krabbel-input');
+            const lijst = document.getElementById('krabbel-lijst');
+            
+            if (input.value.trim() !== "") {
+                const div = document.createElement('div');
+                div.className = 'krabbel-box';
+                div.innerHTML = `<span class="krabbel-name">Jij (nu):</span><p>${input.value}</p>`;
+                lijst.prepend(div);
+                input.value = "";
+            }
+        }
+    </script>
+
+</body>
+</html>
