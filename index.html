@@ -46,7 +46,7 @@
         </div>
 
         <div class="extras">
-            <p class="subtitle">Bezoekers: 000404</p>
+            <p class="subtitle" id="counter">Bezoekers: 000404</p>
             <img src="https://blob.gifcities.org/gifcities/2UM7Y53ZERC6X5U6EDVAT6PVGU53G7DA.gif">
             <p class="subtitle">Deze site is momenteel in aanbouw!</p>
         </div>
@@ -55,6 +55,24 @@
             <p class="copyright"> 2026 - ZiroraPixels Productions</p>
         </footer>
     </div>
+<script>
+    // Kijk of er al een teller in het geheugen staat
+    let visits = localStorage.getItem('visitor_count');
 
+    // Als er geen teller is, begin op 404 (jouw startgetal)
+    if (visits === null) {
+        visits = 404;
+    } else {
+        // Anders: tel er eentje bij op
+        visits = parseInt(visits) + 1;
+    }
+
+    // Sla het nieuwe getal op
+    localStorage.setItem('visitor_count', visits);
+
+    // Zet het getal op de pagina (in je <p class="subtitle">)
+    // We zorgen dat het er altijd uitziet als 6 cijfers (bijv. 000405)
+    document.getElementById('counter').innerText = 'Bezoekers: ' + visits.toString().padStart(6, '0');
+</script>
 </body>
 </html>
