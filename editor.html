@@ -3,26 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Y2K - Code Editor</title>
+    <title>Project Y2K - Profiel Designer</title>
     <link rel="stylesheet" href="css/style.css">
     
     <style>
-        /* Split-screen layout */
-        .editor-wrapper {
+        /* De layout voor de editor */
+        .editor-container {
             display: flex;
             gap: 20px;
             width: 100%;
-            height: 400px;
+            height: 450px;
             margin-bottom: 20px;
         }
 
-        /* LINKS: Invoerveld */
-        #code-input {
+        /* LINKERKANT: De Code Studio */
+        .code-panel {
             width: 50%;
-            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* De ruimte die je wilde tussen textarea en knop */
+        }
+
+        #code-input {
+            flex-grow: 1;
             background-color: #000;
             color: #00ff00;
-            border: 1px solid #00f2ff;
+            border: 2px solid #00f2ff;
             border-radius: 5px;
             font-family: 'Courier New', monospace;
             padding: 15px;
@@ -30,24 +36,38 @@
             font-size: 14px;
         }
 
-        /* RECHTS: Preview */
-        #preview-frame {
+        /* De knop met jouw extra padding en ruimte */
+        .run-btn {
+            background: #00f2ff;
+            color: #000;
+            font-weight: bold;
+            border: none;
+            padding: 15px 25px; 
+            cursor: pointer;
+            font-family: 'Verdana', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 0 15px #00f2ff;
+        }
+
+        /* RECHTERKANT: De Profiel Preview */
+        .preview-panel {
             width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #preview-frame {
+            width: 100%;
             height: 100%;
             background-color: #fff;
-            border: 1px solid #fff;
+            border: 2px solid #fff;
             border-radius: 5px;
         }
 
         @media (max-width: 768px) {
-            .editor-wrapper {
-                flex-direction: column;
-                height: 600px;
-            }
-            #code-input, #preview-frame {
-                width: 100%;
-                height: 50%;
-            }
+            .editor-container { flex-direction: column; height: 700px; }
+            .code-panel, .preview-panel { width: 100%; height: 50%; }
         }
     </style>
 </head>
@@ -55,52 +75,67 @@
 
     <div class="main-container" style="max-width: 1100px;">
         
-        <h1 class="glitter-text">CODE EDITOR</h1>
+        <h1 class="glitter-text">PROFIEL DESIGNER</h1>
         
         <div class="mini butterfly">
             <img src="https://blob.gifcities.org/gifcities/6EJZFXT6FTRNQ7FBRGRX2GGHAHRQI5KJ.gif" alt="Butterfly" width="30">
-            <span class="subtitle">"Links typen = Rechts zien!"</span>
+            <span class="subtitle">"Maak je eigen Tumblr-style profiel!"</span>
             <img src="https://blob.gifcities.org/gifcities/6EJZFXT6FTRNQ7FBRGRX2GGHAHRQI5KJ.gif" alt="Butterfly" width="30">
         </div>
 
         <div class="login-box" style="width: 100%; max-width: 100%; padding: 20px;">
-            <div class="box-header">BOUW JE EIGEN SITE</div>
+            <div class="box-header">CODE & PREVIEW</div>
             
-            <div class="editor-wrapper">
-                <textarea id="code-input" spellcheck="false" placeholder="Typ hier je HTML...">
-<h1>Mijn Eerste Y2K Pagina</h1>
-<p style="color: blue;">Welkom op mijn site!</p>
-<marquee>Dit beweegt!</marquee>
-<button>Klik Mij</button>
-                </textarea>
+            <div class="editor-container">
+                <div class="code-panel">
+                    <textarea id="code-input" spellcheck="false">
+<center>
+  <h2 style="color: hotpink;">~*~ Welkom ~*~</h2>
+  <p>Dit is mijn custom Y2K profiel!</p>
+  <marquee>Vette HTML code hier!</marquee>
+</center>
+                    </textarea>
+                    <button class="run-btn" onclick="saveAndPreview()">[ OPSLAAN & BEKIJKEN ]</button>
+                </div>
                 
-                <iframe id="preview-frame"></iframe>
-            </div>
-
-            <div style="display: flex; gap: 15px; justify-content: center;">
-                <button class="y2k-button" onclick="updatePreview()">[ RUN CODE ]</button>
+                <div class="preview-panel">
+                    <iframe id="preview-frame"></iframe>
+                </div>
             </div>
         </div>
 
         <footer>
-            <img src="https://blob.gifcities.org/gifcities/RI3Z4QPOA3R664NXCR7MNJ22K5UGDIB4.gif" alt="Terug Pijl">
-            
-            <p><a href="dashboard.html">Terug naar Dashboard</a></p>
-            
-            <img src="https://blob.gifcities.org/gifcities/2SKRVMS2FNF3FNZJU3PV5YQVIBHXVMBC.gif">
+            <img src="https://blob.gifcities.org/gifcities/RI3Z4QPOA3R664NXCR7MNJ22K5UGDIB4.gif" alt="Terug">
+            <p><a href="dashboard.html">Terug naar Dashboard</a> | <a href="profiel.html" style="color: #00f2ff;">Bekijk Live Profiel</a></p>
+            <br>
             <p class="copyright">© 2026 - ZiroraPixels Productions</p>
         </footer>
     </div>
 
     <script>
-        function updatePreview() {
+        function saveAndPreview() {
             var code = document.getElementById("code-input").value;
+            
+            // 1. Opslaan in het geheugen (LocalStorage)
+            localStorage.setItem('custom_profile_html', code);
+            
+            // 2. Preview laten zien in het iframe
             var frame = document.getElementById("preview-frame").contentWindow.document;
             frame.open();
-            frame.write(code);
+            frame.write("<style>body{font-family:sans-serif;padding:10px;}</style>" + code);
             frame.close();
+
+            alert("Profiel opgeslagen! Klik onderaan op 'Bekijk Live Profiel' om het resultaat te zien.");
         }
-        window.onload = updatePreview;
+
+        // Als je de pagina opent, laad dan je oude code in
+        window.onload = function() {
+            var savedCode = localStorage.getItem('custom_profile_html');
+            if (savedCode) {
+                document.getElementById("code-input").value = savedCode;
+            }
+            saveAndPreview();
+        };
     </script>
 
 </body>
