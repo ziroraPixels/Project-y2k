@@ -1,4 +1,39 @@
-/* --- Y2K Cyber Style Update --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/aliens-and-cows');
+
+/* --- 2. DE BASIS (Alles is Montserrat) --- */
+body {
+    background: radial-gradient(circle at center, #001f3f 0%, #000510 100%);
+    color: #00f2ff; /* Cyber blauw */
+    font-family: 'Montserrat', sans-serif; /* Standaard tekst */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* --- 3. DE KOPPEN (Aliens and Cows) --- */
+h1, h2, .glitter-text {
+    font-family: 'aliens and cows', sans-serif;
+    font-weight: 400; /* Dit font is van zichzelf al dik genoeg */
+    letter-spacing: 2px; /* Iets meer ruimte maakt het leesbaarder */
+    font-size: 3em; /* Hij mag lekker groot! */
+}
+
+/* --- 4. KNOPPEN & MENU (Montserrat BOLD) --- */
+button, .y2k-button, .sidebar-menu a, .dashboard-menu a, .box-header {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; /* Dikgedrukt (Bold) */
+    text-transform: uppercase; /* Hoofdletters staan stoerder */
+    letter-spacing: 1px;
+}
+
+/* Zorg dat links in het menu ook de juiste font pakken */
+a {
+    font-family: 'Montserrat', sans-serif;
+}
 body {
     background: radial-gradient(circle at center, #001f3f 0%, #000510 100%);
     color: #00f2ff; /* Cyber blauw */
