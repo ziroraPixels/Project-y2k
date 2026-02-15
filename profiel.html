@@ -139,9 +139,8 @@
             <p class="copyright">© 2026 - ZiroraPixels Productions</p>
         </footer>
     </div>
-
-    <script>
-        // Functie om een krabbel toe te voegen (voor nu alleen lokaal zichtbaar)
+<script>
+        // Functie om krabbels toe te voegen (deze had je al)
         function addKrabbel() {
             const input = document.getElementById('krabbel-input');
             const lijst = document.getElementById('krabbel-lijst');
@@ -154,7 +153,18 @@
                 input.value = "";
             }
         }
+
+        // NIEUW: Haal jouw opgeslagen profiel op uit de Editor!
+        window.onload = function() {
+            var savedCode = localStorage.getItem('custom_profile_html');
+            // Als er code is opgeslagen, gooi die in het profiel-vak
+            if (savedCode) {
+                document.getElementById('profile-content').innerHTML = savedCode;
+            }
+        };
     </script>
 
+</body>
+</html>
 </body>
 </html>
