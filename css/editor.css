@@ -90,3 +90,84 @@
     justify-content: center;
     gap: 20px;
 }
+/* --- HIER BEGINT DE EDITOR STIJL (Plak dit onderaan je style.css) --- */
+
+/* De container van de editor */
+.editor-container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    height: 450px;
+    margin-bottom: 20px;
+}
+
+/* Linkerkant (Typen) */
+.code-panel {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+/* Het zwarte typ-vak */
+#code-input {
+    flex-grow: 1;
+    background-color: #000;
+    color: #00ff00;
+    border: 2px solid #00f2ff;
+    border-radius: 5px;
+    /* Code moet altijd 'Courier' zijn, anders leest het niet lekker */
+    font-family: 'Courier New', Courier, monospace; 
+    padding: 15px;
+    resize: none;
+    font-size: 14px;
+}
+
+/* De OPSLAAN knop */
+.run-btn {
+    /* Deze mag wel jouw nieuwe vette font hebben! */
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    
+    background: #00f2ff;
+    color: #000;
+    border: none;
+    padding: 15px 25px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.5);
+    margin-top: 10px;
+}
+
+.run-btn:hover {
+    background: #fff;
+    box-shadow: 0 0 25px #fff;
+}
+
+/* Rechterkant (Preview) */
+.preview-panel {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+#preview-frame {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: 2px solid #fff;
+    border-radius: 5px;
+}
+
+/* Mobiele fix voor de editor */
+@media (max-width: 768px) {
+    .editor-container {
+        flex-direction: column;
+        height: 700px;
+    }
+    .code-panel, .preview-panel {
+        width: 100%;
+        height: 50%;
+    }
+}
